@@ -11,9 +11,17 @@
 <body>
 
     <div id="app">
-        <button @click="setText()">setText</button>
-        <h1>
-            {{txt}}
+        <button @click="setText()">
+            setText
+        </button>
+        <h1 v-if="txt=='a'">
+            HTML
+        </h1>
+        <h1 v-else-if="txt=='b'">
+            CSS
+        </h1>
+        <h1 v-else>
+            JS
         </h1>
         <h2>
             {{colorLish[1]}}
@@ -21,6 +29,15 @@
         <h1>
             {{obj.id}}
         </h1>
+        <h1 @click="setVal()">
+            {{price}}
+        </h1>   
+        <h1>
+            {{itemList[2].name}}
+        </h1>
+        <p>
+            {{isActive ? 'Active' : 'Inactive'}}
+        </p>
     </div>
 
 
