@@ -63,7 +63,7 @@
             </li><br>
 
             <li class="a" :class="{'active':data.isActive}" v-for="data,i in objlist" :key="data.id" @mouseover="newImg(i)"
-                @mouseout="oldImg(i)">
+                @mouseout="oldImg(i)" @click="clickli(i)">
                 {{ data.id }} - {{ data.name }} - <img :src="data.img" alt="{{ data.name }}">
             </li>
         </ul>

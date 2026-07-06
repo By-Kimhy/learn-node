@@ -13,6 +13,10 @@ const app = Vue.createApp({
         }
     },
     methods:{
+
+        clickli(i){
+            this.objlist[i].isActive = !this.objlist[i].isActive;
+        },
         newImg(i){
             this.objlist[i].img = this.objlist[i].img2;
         },
