@@ -1,32 +1,39 @@
 <template>
-  <Popup v-if="IsActive" :Header="txtH" conten="Body" @close="closePopup"/>
-  <button @click="showPopup">Click</button>
+  <div>
+    <button @click="showPopup">Click</button>
 
-  <!-- <NavBar /><br>
-  <leftMenu /><br>
-  <h1>{{ txt }}</h1> -->
+    <Popup v-if="IsActive" :header="txtH" content="Body" @close="closePopup">
+      <template v-slot:h2>
+        <h2>Slot1</h2>
+      </template>
+
+      <h3>Slot2</h3>
+    </Popup>
+  </div>
+
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
 import leftMenu from './components/leftMenu.vue';
 import Popup from './components/Popup.vue';
+
 export default {
   data() {
     return {
-      IsActive:false,
-      txtH:'Dynamic Header'
+      IsActive: false,
+      txtH: 'Dynamic Header'
     }
   },
-  methods:{
-    showPopup(){
-      this.IsActive=true
+  methods: {
+    showPopup() {
+      this.IsActive = true
     },
-    closePopup(){
-      this.IsActive=false
+    closePopup() {
+      this.IsActive = false
     }
   },
-  components:{
+  components: {
     NavBar,
     leftMenu,
     Popup
@@ -35,7 +42,7 @@ export default {
 </script>
 
 <style scoped>
-  button{
-    padding: 18px;
-  }
+button {
+  padding: 18px;
+}
 </style>
