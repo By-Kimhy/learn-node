@@ -58,7 +58,7 @@
     .container {
         width: 81%;
         margin: auto;
-        background-color: whitesmoke;
+        background-color: rgba(245, 245, 245, 0.664);
         display: flex;
         justify-content: space-between;
     }
@@ -77,6 +77,8 @@
     .item-box .img-box {
         width: 100%;
         height: 70%;
+        border-radius: 24px;
+        background-color: white;
     }
 
     .item-box .img-box img {
