@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, computed } from 'vue';
     const itemList = ref(
         [
             {
@@ -33,15 +33,25 @@
         ]
     );
     const newImg = (item) => {
-        item.img=item.img2
+        item.img = item.img2
     }
-    const oldImg=(item)=>{
-        item.img=item.img1
+    const oldImg = (item) => {
+        item.img = item.img1
     }
+
+    const dataList = ref([
+        "html", 'css', 'JS', 'JQuery', 'Vue', "React"
+    ])
+    const tmpData = computed(() => {
+        return dataList.value.filter(e => e == "JS")
+    })
 </script>
 
 <template>
     <div class="container">
+        <ul>
+            <li v-for="(item, i) in tmpData" :key="i">{{item}}</li>
+        </ul>
         <div class="item-box" v-for="(item, index) in itemList" :key="index">
             <div class="img-box" @mouseover="newImg(item)" @mouseleave="oldImg(item)">
                 <img :src="item.img">
@@ -60,6 +70,7 @@
         margin: auto;
         background-color: rgba(245, 245, 245, 0.664);
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
 
@@ -102,5 +113,20 @@
         font-size: 10px;
         text-align: center;
         color: #000;
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    ul li {
+        justify-content: center;
+        align-items: center;
+        display: block;
+        padding: 5px;
+        font-weight: bold;
     }
 </style>

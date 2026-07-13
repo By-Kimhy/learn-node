@@ -10,9 +10,8 @@ const showForm = () => {
 </script>
 
 <template>
-  <!-- <ImgList /> -->
-  <button @click="showForm">Show Form</button>
-
-  <Popup v-if="isShow" header="Prop Header" body="Prop Body" @close="showForm"/>
+  <ImgList />
+  <!-- <button @click="showForm">Show Form</button>
+  <Popup v-if="isShow" header="Prop Header" body="Prop Body" @close="showForm"/> -->
 
 </template>
