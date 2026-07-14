@@ -9,7 +9,6 @@
 
 import frm from './components/frm.vue';
 import ListData from './components/listData.vue';
-import listData from './components/listData.vue';
 
 </script>
 
@@ -17,6 +16,9 @@ import listData from './components/listData.vue';
   <!-- <ImgList /> -->
   <!-- <button @click="showForm">Show Form</button>
   <Popup v-if="isShow" header="Prop Header" body="Prop Body" @close="showForm"/> -->
-  <frm />
-  <ListData />
+  <div>
+    <frm />
+    <ListData />
+  </div>
+
 </template>
