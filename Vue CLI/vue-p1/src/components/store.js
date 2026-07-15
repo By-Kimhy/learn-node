@@ -1,33 +1,32 @@
-import {ref} from 'vue'
-
-
+import { ref } from 'vue'
 export const itemList = ref([
     {
         id: 1,
-        name: 'apple',
+        name: 'Apple',
         sub: [
-            'iphone',
-            'ipad',
-            'mac'
+            'Iphone',
+            'Ipad',
+            'Macbook'
         ]
-
     },
     {
         id: 2,
-        name: 'google',
+        name: 'Google',
         sub: [
-            'chrome',
-            'chromebook',
-            'android'
+            'Chrome',
+            'Chromebook',
+            'Android'
         ]
     },
     {
         id: 3,
-        name: 'microsoft',
+        name: 'Microsoft',
         sub: [
-            'windows',
-            'mac',
-            'office'
+            'Windows',
+            'Mac',
+            'Office'
         ]
     }
 ])
+
+export const isDrawer = ref(false)
