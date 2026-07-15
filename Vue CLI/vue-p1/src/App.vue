@@ -1,11 +1,13 @@
 <script setup>
   import MenuBar from './components/MenuBar.vue'
-  import LeftMenu from './components/LeftMenu.vue'
+  import Drawer from './components/Drawer.vue'
   import Popup from './components/Popup.vue'
+  import HeroSection from './components/HeroSection.vue'
   import { isDrawer } from './components/store'
 </script>
 <template>
-  <LeftMenu />
+  <Drawer />
   <MenuBar />
   <Popup v-if="isDrawer" @click="isDrawer = false" />
+  <HeroSection />
 </template>
