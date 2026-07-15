@@ -7,7 +7,8 @@ export const itemList = ref([
             'Iphone',
             'Ipad',
             'Macbook'
-        ]
+        ],
+        isShow:true 
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ export const itemList = ref([
             'Chrome',
             'Chromebook',
             'Android'
-        ]
+        ],
+        isShow:false
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ export const itemList = ref([
             'Windows',
             'Mac',
             'Office'
-        ]
+        ],
+        isShow:false
     }
 ])
 

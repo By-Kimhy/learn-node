@@ -1,15 +1,19 @@
 <script setup>
+import { ref } from "vue";
 import { itemList } from "./store";
+const HideShowItem = (item) => {
+    item.isShow = !item.isShow;
+};
 </script>
 <template>
     <div class="col-xxl-3 col-xl-3 left-menu">
         <ul>
             <li v-for="item  in itemList" :key="item">
-                <a>
+                <a @click="HideShowItem(item)">
                     <span>{{item.name}}</span>
-                    <i class="fas fa-plus"></i>
+                    <i class="fas " :class="{'fa-plus':!item.isShow,'fa-minus':item.isShow}"></i>
                 </a>
-                <ul class="sub-menu">
+                <ul class="sub-menu" v-if="item.isShow">
                     <li v-for="sub in item.sub" :key="sub">
                         <a>{{ sub }}</a>
                     </li>
