@@ -9,7 +9,8 @@ export const itemList = ref([
             'Ipad',
             'Macbook'
         ],
-        isShow:true 
+        isShow:true,
+        img:"src/assets/img/1-1.webp"
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ export const itemList = ref([
             'Chromebook',
             'Android'
         ],
-        isShow:false
+        isShow:false,
+        img:"src/assets/img/2-1.webp"
     },
     {
         id: 3,
@@ -29,7 +31,8 @@ export const itemList = ref([
             'Mac',
             'Office'
         ],
-        isShow:false
+        isShow:false,
+        img:"src/assets/img/3-1.webp"
     }
 ]);
 
