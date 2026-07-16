@@ -5,6 +5,7 @@
   import HeroSection from './components/HeroSection.vue'
   import CityList from './components/CityList.vue'
   import FriendList from './components/FriendList.vue'
+  import Chat from './components/Chat.vue'
   import { isDrawer } from './components/store'
 </script>
 <template>
@@ -14,4 +15,5 @@
   <Popup v-if="isDrawer" @click="isDrawer = false" />
   <CityList />
   <FriendList />
+  <Chat />
 </template>

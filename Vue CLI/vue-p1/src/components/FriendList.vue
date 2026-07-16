@@ -1,9 +1,15 @@
 <script setup>
     import { ref } from 'vue';
-    import { itemList } from './store'
+    import { itemList,tmpItem } from './store'
     var hideShow = ref(false);
     const HideShowFriendBox = () => {
         hideShow.value = !hideShow.value;
+    }
+    const addChat = (item) => {
+        tmpItem.value.push({
+            name:item.name,
+            img:item.img
+        })
     }
 </script>
 
@@ -11,7 +17,7 @@
     <div class="friend-box" :class="{'hide':hideShow}">
         <h1 @click="HideShowFriendBox">Friend List</h1>
         <ul>
-            <li v-for="(item,i) in itemList" :key="i">
+            <li v-for="(item,i) in itemList" :key="i" @click="addChat(item)">
                 <img :src="item.img" alt="">
                 <span>{{item.name}}</span>
             </li>
