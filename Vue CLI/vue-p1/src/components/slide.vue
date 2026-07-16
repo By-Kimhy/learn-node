@@ -7,23 +7,21 @@ const nextSlide = () => {
     if (slideIndex.value == itemList.value.length) {
         slideIndex.value = 0
     }
-    console.log(slideIndex.value)
 }
 const prevSlide = () => {
     slideIndex.value--
     if (slideIndex.value == -1) {
         slideIndex.value = itemList.value.length - 1
     }
-    console.log(slideIndex.value)
 }
 
-var myAutoSlide = setInterval(nextSlide, 1000)
+var myAutoSlide = setInterval(nextSlide, 3000)
 
 const stopAutoSlide = () => {
     clearInterval(myAutoSlide)
 }
 const startAutoSlide = () => {
-    myAutoSlide = setInterval(nextSlide, 1000)
+    myAutoSlide = setInterval(nextSlide, 3000)
 }
 </script>
 <template>

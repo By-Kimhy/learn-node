@@ -1,5 +1,4 @@
 import { ref } from 'vue';
-export const isDrawer = ref(false);
 export const itemList = ref([
     {
         id: 1,
@@ -35,6 +34,8 @@ export const itemList = ref([
         img:"src/assets/img/3-1.webp"
     }
 ]);
+
+export const isDrawer = ref(false);
 
 export const cityList = ref([
     {
