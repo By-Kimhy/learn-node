@@ -1,5 +1,8 @@
 <script setup>
     import { tmpItem } from './store'
+    const removeChat = (i) => {
+        tmpItem.value.splice(i,1)
+    }
 
 </script>
 <template>
@@ -8,7 +11,7 @@
             <div class="header">
                 <img :src="item.img" alt="">
                 <span>{{item.name}}</span>
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" @click="removeChat(i)"></i>
             </div>
         </div>
     </div>
