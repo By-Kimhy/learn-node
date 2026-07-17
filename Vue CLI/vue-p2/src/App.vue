@@ -5,7 +5,9 @@ import MenuBar from './components/MenuBar.vue'
 </script>
 
 <template>
-  <MenuBar />
+  <div>
+    <MenuBar />
+    <RouterView />
+  </div>
 
-  <RouterView />
 </template>
