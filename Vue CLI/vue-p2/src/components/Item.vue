@@ -2,6 +2,7 @@
 import { watchEffect, onMounted, computed, ref } from 'vue';
 import { itemList } from './store.js'
 import { useRouter } from 'vue-router';
+import axios from 'axios';
 const router = useRouter();
 const props = defineProps(['id']);
 const data = ref([]);
@@ -31,23 +32,34 @@ const fetchApi = async () => {
     console.log(data.value);
     isLoading.value = false;
 }
+const fetchAxios = () => {
+    isLoading.value = true;
+    let url = 'https://reanweb.com/api/teaching/get-menu.php';
+    axios.get(url)
+        .then(e => {
+            console.log(e.data);
+            data.value = e.data;
+            isLoading.value = false;
+        });
+}
 
 onMounted(() => {
-    fetchApi();
+    // fetchApi();
+    fetchAxios();
 })
 
 </script>
 
 <template>
     <div>
-        <!-- <h1>Item {{ $route.params.id }}</h1>
+        <h1>Item {{ $route.params.id }}</h1>
         <h2>Item Props {{ props.id }}</h2>
         <h2>Menu Item {{ getMenuName[0].name }}</h2>
-        <button @click="backHome">Back Home</button> -->
+        <button @click="backHome">Back Home</button>
         <div>
             <h1>Fetch API</h1>
             <h1 v-if="isLoading">loading...</h1>
-            <h2 v-else v-for="(d,i) in data" :key="i">
+            <h2 v-else v-for="(d, i) in data" :key="i">
                 {{ d.name }}
             </h2>
         </div>
