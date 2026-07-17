@@ -10,6 +10,7 @@ const getMenu = () => {
         .then(rp => {
             dataList.value = rp.data;
             isLoading.value = false;
+            console.log(dataList.value);
         });
 }
 onMounted(() => {
@@ -28,7 +29,7 @@ onMounted(() => {
                             <router-link to="/"><i class="fa-solid fa-house"></i></router-link>
                         </li>
                         <li v-for="(data, i) in dataList" :key="i">
-                            <router-link>{{ data.name }}</router-link>
+                            <router-link :to="{name:'Home2',params:{mid:data.id}}">{{ data.name }}-{{ data.id }}</router-link>
                         </li>
                     </ul>
                 </div>

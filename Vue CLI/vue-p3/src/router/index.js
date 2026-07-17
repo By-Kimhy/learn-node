@@ -8,7 +8,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
-    },
+    },{
+      path: '/topic/:mid',
+      name: 'Home2',
+      component: Home,
+      props: true,
+    }
   ],
 })
 
