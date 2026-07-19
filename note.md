@@ -10,6 +10,7 @@ run vue
 
 build vue  
     - npm run build
+        it will create dist folder for hosting
 
 
 using vue
