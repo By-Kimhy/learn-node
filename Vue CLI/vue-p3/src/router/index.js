@@ -40,6 +40,7 @@ router.beforeEach((to, from, next) => {
     var title = dataList.value.filter(el => el.id == to.params.mid);
     document.title = title[0].name;
   }
+  next();
 })
 
 export default router

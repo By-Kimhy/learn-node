@@ -21,7 +21,7 @@ const getNews = () => {
         .then(rp => {
             newsData.value = rp.data;
             isLoading.value = false;
-            // console.log(newsData.value);
+            console.log(newsData.value);
         });
 }
 const mid = ref(0);
