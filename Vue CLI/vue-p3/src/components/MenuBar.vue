@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import Axios from 'axios';
-const dataList = ref([]);
+import { dataList } from './Store';
 const isLoading = ref(true);
 const getMenu = () => {
     isLoading.value = true;
@@ -10,7 +10,7 @@ const getMenu = () => {
         .then(rp => {
             dataList.value = rp.data;
             isLoading.value = false;
-            console.log(dataList.value);
+            // console.log(dataList.value);
         });
 }
 onMounted(() => {

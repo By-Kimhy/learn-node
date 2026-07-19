@@ -21,7 +21,7 @@ const getNews = () => {
         .then(rp => {
             newsData.value = rp.data;
             isLoading.value = false;
-            console.log(newsData.value);
+            // console.log(newsData.value);
         });
 }
 const mid = ref(0);
@@ -30,7 +30,7 @@ watchEffect(() => {
     if (route.params.mid) {
         mid.value = route.params.mid;
     }
-    console.log(mid.value);
+    // console.log(mid.value);
 })
 onMounted(() => {
     getNews();

@@ -4,3 +4,5 @@ export const newsDetail2 = ref({
     des: ''
 }
 );
+
+export const dataList = ref([]);
